@@ -1,0 +1,224 @@
+.page-header {
+    background-color: #000000;
+    margin-top: 0;
+    padding: 20px 20px 20px 40px;
+}
+
+.page-header h1, .page-header h1 a, .page-header h1 a:visited, .page-header h1 a:active {
+    color: #ffffff;
+    font-size: 36pt;
+    text-decoration: none;
+}
+
+.content {
+    margin-left: 40px;
+}
+
+.search {
+    margin-right: 40px;
+    margin-top: 0;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.date {
+    color: #828282;
+}
+
+.save {
+    float: right;
+}
+
+.post-form textarea, .post-form input {
+    width: 100%;
+}
+
+.top-menu, .top-menu:hover, .top-menu:visited {
+    color: white;
+    font-size: 15pt;
+    margin-right: 20px;
+    margin-top: 0;
+    float: right;
+}
+
+.product, .client, .order {
+
+    list-style: none;
+    padding: 0;
+    display: block;
+    position: relative;
+    text-decoration: none;
+}
+
+.product h2 a, .product h2 a:visited {
+    color: #000000;
+}
+
+.client h2 a, .client h2 a:visited {
+    color: #000000;
+}
+
+.order h2 a, .order h2 a:visited {
+    color: #000000;
+}
+
+.parent {
+ margin: 3%; /* Отступы вокруг элемента */
+ background: #CBD0D1; /* Цвет фона */
+ padding: 10px; /* Поля вокруг текста */
+}
+.child {
+ padding: 10px; /* Поля вокруг текста */
+ margin: 10px;
+ font-family:  'Montserrat', sans-serif; /* Отступы вокруг */
+}
+
+.links h4 a, .links h4 a:visited {
+    color: #000000;
+}
+
+.plus a, .plus a:visited {
+    color: #000000;
+    font-size: 20pt;
+}
+
+p, p a:visited, .number_order a:visited {
+  color: #000000;
+  font-size: 12pt;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.sort a, .sort a:visited {
+    color: #000000;
+    font-size: 10pt;
+}
+
+ul.links {
+ width: 250px; /* Ширина меню */
+ list-style: none; /* Для списка убираем маркеры */
+ margin: 0; /* Нет отступов вокруг */
+ padding: 0; /* Убираем поля вокруг текста */
+ font-family:  'Montserrat', sans-serif; /* Рубленый шрифт для текста меню */
+ font-size: 15pt; /* Размер названий в пункте меню */
+}
+
+ul.links li a {
+ display: block; /* Ссылка как блочный элемент */
+ padding: 5px; /* Поля вокруг надписи */
+ text-decoration: none; /* Подчеркивание у ссылок убираем */
+ color: black; /* Цвет текста */
+ border: 1px solid grey;/* Рамка вокруг пунктов меню */
+ background-color: #CBD0D1; /* Цвет фона */
+ border-bottom: 1px solid grey; /* Границу снизу не проводим */
+}
+ul.links li a:hover {
+ color: black; /* Цвет текста активного пункта */
+ background-color: white; /* Цвет фона активного пункта */
+}
+
+.login {
+
+  margin-left: 525px;
+}
+
+table {
+
+  border-collapse: collapse;
+  line-height: 1.1;
+  font-family:'Montserrat' , sans-serif;
+  background: white;
+  color: #0C213B;
+  margin-left: 20px;
+  width: 120%;
+}
+caption {
+  font-family: 'Montserrat' , sans-serif;
+  font-weight: bold;
+  font-size: 2em;
+  padding: 10px;
+
+ }
+
+th {
+  padding: 20px;
+  border: 1px solid grey;
+}
+td {
+  font-size: 1em;
+  padding: 20px 25px 25px;
+  border: 1px solid grey;
+
+}
+.first {
+  font-size: 1em;
+  font-weight: bold;
+  text-align: center;
+}
+.passport {
+  text-align: center;
+
+}
+
+h1 a {
+  color: black;
+  text-decoration: none;
+
+}
+h1 a:hover {
+   color: black;
+ }
+
+ul.hr {
+    width: 500px;/* Ширина меню */
+    margin: 0; /* Обнуляем значение отступов */
+    padding: 0; /* Значение полей */
+}
+
+ul.hr li.hrr {
+    display: block;  /* Отображать как блочный элемент */
+    margin-right: 5px; /* Отступ слева */
+    border: 1px solid white; /* Рамка вокруг текста */
+    padding: 3px; /* Поля вокруг текста */
+    background-color: white; /* Цвет фона */
+}
+
+ul.hr li:hover {
+    background-color: #ddddda  ;
+}
+
+ul.hr li a {
+    text-decoration: none;
+}
+
+#search {
+
+  width: 400px;
+  height: 35px;
+  border: 1px solid white;
+  font-size: 22px;
+  color: black;
+
+}
+
+#search1 {
+
+  width: 300px;
+  height: 35px;
+  border: 1px solid white;
+  font-size: 22px;
+  background-color: #ddddda;
+  color: black;
+
+}
+
+#button {
+
+  width: 100px;
+  height: 35px;
+  border: 1px solid white;
+  font-size: 22px;
+  background-color: #ddddda;
+  color: black;
+}

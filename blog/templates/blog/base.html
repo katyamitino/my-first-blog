@@ -1,0 +1,68 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ГЕОПРОМ</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    </head>
+    <body>
+        <div class="page-header">
+          {% if user.is_authenticated %}
+            <p class="top-menu">Добрый день, {{ user.username }} ! <a href="{% url 'logout' %}"  class="top-menu">  Log out<span class="glyphicon glyphicon-log-in"></span></a></p>
+          {% else %}
+            <p align = "right"> <a href="{% url 'login' %}" class="top-menu"> Вход в систему <span class="glyphicon glyphicon-log-in"></span></a></p>
+          {% endif %}
+          <h1><a href="/">ГЕОПРОМ</a></h1>
+          <h5 style= "color: #CBD0D1">  Производство и поставка инженерного оборудования </h5>
+        </div>
+        <div class="parent">
+          <div class= "links">
+            {% if error %}
+              <p style="color: red;">Please submit a search term.</p>
+            {% endif %}
+              <h3>ПОИСК</h3>
+              <form action="/search_results/" method="get">
+                <input id = "search" type="text" name="t" placeholder="Найти" autocomplete="off" />
+                <button class="btn btn-search" type="submit" name="s" value="Найти">
+                <i class="svg inline  svg-inline-search" aria-hidden="true" >
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+                <defs>
+                  <style>
+                    .stcls-1 {
+                      fill: #222;
+                      fill-rule: evenodd;
+                    }
+                    </style>
+                </defs>
+                <path class="stcls-1" d="M15.644,15.644a1.164,1.164,0,0,1-1.646,0l-2.95-2.95a7.036,7.036,0,1,1,1.645-1.645L15.644,14A1.164,1.164,0,0,1,15.644,15.644ZM7,2a5,5,0,1,0,5,5A5,5,0,0,0,7,2Z"/>
+              </svg>
+            </i>
+          	</button>
+            <span class="close-block inline-search-hide"><span class="svg svg-close close-icons"></span></span>
+              </form>
+            <h3> МЕНЮ <h3>
+            <ul class = "links">
+            <li class = "links"><a href="http://127.0.0.1:8000/"> Товары </a></li>
+            <li class = "links"><a href="http://127.0.0.1:8000/client_list/"> Клиенты </a></li>
+            <li class = "links"><a href="http://127.0.0.1:8000/order_list/"> Заказы </a></li>
+            <li class = "links"><a href="http://127.0.0.1:8000/supplier_list/"> Поставщики </a></li>
+            <li class = "links"><a href="http://127.0.0.1:8000/statistics/"> Статистика </a></li>
+          </ul>
+         </div>
+       </div>
+          <div class="content container">
+             <div class="row">
+                <div class="col-md-8">
+                    {% block content %}
+                    {% endblock %}
+               </div>
+             </div>
+         </div>
+         <br>
+         <br>
+    </body>
+</html>

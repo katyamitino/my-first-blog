@@ -1,0 +1,22 @@
+{% extends 'blog/base.html' %}
+                  {% block content %}
+                      {% if user.is_authenticated %}
+                      <div class= "plus">
+                      <h1> Список поставщиков <a href="{% url 'supplier_new' %}"><span class="glyphicon glyphicon-plus"></span></a></h1>
+                      </div>
+                      {% endif %}
+                        <br>
+                        <br>
+                         {% for supplier in suppliers %}
+                          <div class="supplier">
+                              <h2><a href="{% url 'supplier_detail' pk=supplier.pk %}">Компания: {{ supplier.company|linebreaksbr }}</a></h2>
+                              <p> Номер телефона: {{ supplier.phone_number|linebreaksbr }}</p>
+                              <p> Адрес: {{ supplier.address|linebreaksbr }}</p>
+                              <p> Описание: </p>
+                              <p> {{ supplier.description|linebreaksbr }}</p>
+                              <div class="date">
+                                  {{ supplier.published_date }}
+                              </div>
+                          </div>
+                      {% endfor %}
+                  {% endblock %}

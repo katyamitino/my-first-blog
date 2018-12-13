@@ -1,0 +1,21 @@
+{% extends 'blog/base.html' %}
+  {% block content %}
+        {% if user.is_authenticated %}
+          <div class= "plus">
+            <h1> Список клиентов <a href="{% url 'client_new' %}"><span class="glyphicon glyphicon-plus"></span></a></h1>
+          </div>
+        {% endif %}
+        <br>
+        <br>
+        {% for client in clients %}
+          <div class="client">
+            <h2><a href="{% url 'client_detail' pk=client.pk %}">{{ client.fio }}</a></h2>
+            <p> Компания: {{ client.company|linebreaksbr }}</p>
+            <p> Номер телефона: {{ client.phone_number|linebreaksbr }}</p>
+            <p> Для информациии о заказах Клиента откройте подробную информацию о нем. </p>
+            <div class="date">
+              {{ client.published_date }}
+            </div>
+          </div>
+          {% endfor %}
+{% endblock %}

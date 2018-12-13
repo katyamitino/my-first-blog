@@ -1,0 +1,40 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+
+          <h1> <a name= "title"> Список товаров <a/>
+    {% if user.is_authenticated %}
+          <a class= "plus" href="{% url 'product_new' %}"><span class="glyphicon glyphicon-plus"></span></a></h1>
+    {% endif %}
+          <div class= "sort">
+            <h3> Сортировать <a class="btn btn-default" href="{% url 'product_list_order_by_name' %}#title">  <span class="glyphicon glyphicon-sort-by-alphabet"></span></a>
+              <a class="btn btn-default" href="{% url 'product_list_min_to_max' %}#title">  <span class="glyphicon glyphicon-sort-by-order"></span></a>
+              <a class="btn btn-default" href="{% url 'product_list_max_to_min' %}#title"> <span class="glyphicon glyphicon-sort-by-order-alt"></span></a></h3>
+          </div>
+    <br>
+    {% if user.is_authenticated %}
+    <h3>Генератор Паспорта на Продукцию</h3>
+    <h5>Введите артикул или наименование Товара:</h5>
+        <form action="/passport/" method="get">
+          <input id= "search1" type="search" name="a" placeholder = "например: решетка"/>
+          <input id= "button" type="submit" value="Найти"/>
+        </form>
+    {% endif %}
+    <ul class= "hr">
+       {% for product in products %}
+       <li class = "hrr">
+        <div class="product">
+            <h2><a href="{% url 'product_detail' pk=product.pk %}"> {{ product.name  }}</h2>
+              <p> Артикул : {{ product.id|linebreaksbr }}</p>
+              <p> Цена (рубли): {{ product.price|linebreaksbr }}</p>
+              <p> Количество (штуки): {{ product.number|linebreaksbr }}</p>
+              <p> Поставщик: {{ product.supplier|linebreaksbr }}</p>
+            <div class="date">
+                {{ product.published_date }}
+            </div>
+          </a>
+       </div>
+       </li>
+      {% endfor %}
+    </ul>
+{% endblock %}

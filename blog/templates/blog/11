@@ -1,0 +1,19 @@
+ul.hr {
+ width: 800px;/* Ширина меню */
+ margin: 0; /* Обнуляем значение отступов */
+ padding: 0; /* Значение полей */
+}
+ul.hr li {
+ display: inline-block;  /* Отображать как блочный элемент */
+ margin-right: 5px; /* Отступ слева */
+ border: 1px solid white; /* Рамка вокруг текста */
+ padding: 3px; /* Поля вокруг текста */
+ background-color: white; /* Цвет фона */
+}
+ul.hr li:hover {
+ background-color: #ddddda  ;
+}
+
+ul.hr li a {
+ text-decoration: none;
+}

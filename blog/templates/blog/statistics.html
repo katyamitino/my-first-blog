@@ -1,0 +1,10 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+  <h3> Максимальная цена:</h3>
+  <h3><a href="{% url 'product_detail' pk=need.pk %}"> {{need.name}} c ценой {{need.price}}</a></h3>
+  <h3> Минимальная цена: </h3>
+  <h3><a href="{% url 'product_detail' pk=minimum.pk %}"> {{minimum.name}} c ценой {{min_price}} </a> </h3>
+  <h3> Средняя цена: {{avg_price}} </h3>
+  <h3> Количество товаров:  {{count}} </h3>
+{% endblock %}

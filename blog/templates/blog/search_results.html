@@ -1,0 +1,38 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+    <h3>Вы искали: <strong>{{ query }}</strong></h3>
+        {% if products or clients or orders %}
+          <h3>Результаты поиска:</h3>
+            <ul>
+              {% for product in products %}
+              <h2><a href="{% url 'product_detail' pk=product.pk %}">{{ product.name }}</a></h2>
+              <p> Цена (рубли): {{ product.price|linebreaksbr }}</p>
+              <p> Количество (штуки): {{ product.number|linebreaksbr }}</p>
+              <p> Поставщик: {{ product.supplier|linebreaksbr }}</p>
+              {% endfor %}
+              {% for client in clients %}
+              <h2><a href="{% url 'client_detail' pk=client.pk %}">{{ client.fio }}</a></h2>
+              <p> Компания: {{ client.company|linebreaksbr }}</p>
+              <p> Телефонный номер: {{ client.phone_number|linebreaksbr }}</p>
+              <p> Номер заказа: {{ client.order_id|linebreaksbr }}</p>
+              {% endfor %}
+              {% for order in orders %}
+              <h2><a href="{% url 'order_detail' pk=order.pk %}">Номер заказа: {{ order.id }}</a></h2>
+              <p> Компания: {{ order.company|linebreaksbr }}</p>
+              <p> Телефонный номер: {{ order.phone_number|linebreaksbr }}</p>
+              <p> Заказ: </p>
+              <p>{{ order.order|linenumbers|linebreaksbr }}</p>
+              {% endfor %}
+              {% for supplier in suppliers %}
+              <h2><a href="{% url 'supplier_detail' pk=supplier.pk %}">Компания: {{ supplier.company|linebreaksbr }}</a></h2>
+              <p> Номер телефона: {{ supplier.phone_number|linebreaksbr }}</p>
+              <p> Адрес: {{ supplier.address|linebreaksbr }}</p>
+              <p> Описание: </p>
+              <p> {{ supplier.description|linebreaksbr }}</p>
+              {% endfor %}
+            </ul>
+        {% else %}
+        <h3>Упс, ничего не найдено...</h3>
+        {% endif %}
+{% endblock %}

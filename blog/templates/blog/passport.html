@@ -1,0 +1,36 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+
+    <h3>Вы ввели: <strong>{{ querya }}</strong></h3>
+        {% if products %}
+          <h3>Результат:</h3>
+          <br>
+
+            {% for product in products %}
+            <div class= "passport">
+            <h2> Паспорт на продукцию №  {{ product.id|linebreaksbr }}</h2>
+            <br>
+            <br>
+            <br>
+            <h2><b> Наименование товара: {{ product.name|linebreaksbr }} </b></h2>
+            <br>
+            <br>
+            <br>
+            <table>
+              <tr><th> Наименование показателя </th><th> Показатель </th></tr>
+              <tr><td> Артикул </td><td> {{ product.id|linebreaksbr }}</td></tr>
+              <tr><td> Цена (рубли) </td><td> {{ product.price|linebreaksbr }} </td></tr>
+              <tr><td> Количество </td><td> 1 штука </td></tr>
+              <tr><td> Производитель </td><td>{{ product.supplier|linebreaksbr }}</td></tr>
+              <tr><td> Получатель </td><td> ООО ГЕОПРОМ </td></tr>
+            </table>
+            <br>
+            <br>
+            <h4> Дата выдачи паспорта: {{ product.published_date }}</h4>
+            </div>
+            {% endfor %}
+        {% else %}
+        <h3>Упс, ничего не найдено...</h3>
+        {% endif %}
+{% endblock %}

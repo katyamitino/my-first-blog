@@ -1,0 +1,23 @@
+{% extends 'blog/base.html' %}
+                  {% block content %}
+                      {% if user.is_authenticated %}
+                      <div class= "plus">
+                      <h1> Список заказов <a href="{% url 'order_new' %}"><span class="glyphicon glyphicon-plus"></span></a></h1>
+                      </div>
+                      {% endif %}
+                        <br>
+                        <br>
+                         {% for order in orders %}
+                          <div class="order">
+                              <h2><a href="{% url 'order_detail' pk=order.pk %}">Номер заказа:  {{ order.id }}</a></h2>
+                              <p> ФИО заказчика: {{ order.fio|linebreaksbr }}</p>
+                              <p> Компания: {{ order.company|linebreaksbr }}</p>
+                              <p> Номер телефона: {{ order.phone_number|linebreaksbr }}</p>
+                              <p> Заказ: </p>
+                              <p> {{ order.order|linenumbers|linebreaksbr }}</p>
+                              <div class="date">
+                                  {{ order.published_date }}
+                              </div>
+                          </div>
+                      {% endfor %}
+                  {% endblock %}
